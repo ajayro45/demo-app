@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-web-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-web
+  template:
+    metadata:
+      labels:
+        app: simple-web
+    spec:
+      containers:
+      - name: nginx-container
+        image: ajayro45/demo:1.0.0 # Replace with your pushed image
+        ports:
+        - containerPort: 80
