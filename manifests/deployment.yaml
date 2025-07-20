@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-web-deployment
-  namespace: demo  
+  namespace: demo
 spec:
   replicas: 1
   selector:
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image: docker.io/ajayro45/demo:2.0.0 # {"$imagepolicy": "flux-system:demo-image-policy"} 
+        image: docker.io/ajayro45/demo:3.0.0 # {"$imagepolicy": "flux-system:demo-image-policy"} 
         ports:
         - containerPort: 80
